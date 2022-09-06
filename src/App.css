@@ -2,3 +2,7 @@
 .container{
   max-width: 90%;
 }
+.blog-list{
+  max-height: 85vh;
+  overflow-y: auto;
+}
