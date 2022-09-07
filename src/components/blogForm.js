@@ -5,7 +5,6 @@ function PostForm() {
   const [title, setTitle] = useState('');
   const [isLoading, setIsLoading] = useState(false)
   const onClickSave = async () => {
-    console.log('onClickSave');
     setIsLoading(true);
     try {
       const { data } = await savePost(title);
@@ -24,7 +23,7 @@ function PostForm() {
         <div className="form-group">
           <input className="form-control" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
         </div>
-        <button type="button" className="btn btn-primary" onClick={() => onClickSave()} disabled={isLoading}>{isLoading ? 'saving..' : 'Save' }</button>
+        <button type="button" className="btn btn-primary" onClick={() => onClickSave()} disabled={isLoading}>{isLoading ? 'saving...' : 'Save' }</button>
       </div>
     </div>
   );

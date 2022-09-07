@@ -11,7 +11,6 @@ function CommentList() {
   const [isError, setIsError] = useState(false);
   const [comments, setComments] = useState([]);
   useEffect(() => {
-    console.log('use date');
     const loadComments = async () => {
       setIsLoading(true);
       try {

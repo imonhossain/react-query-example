@@ -1,15 +1,8 @@
-import { useEffect } from 'react';
 import './App.css';
 import PostForm from './components/blogForm';
 import CommentList from './components/commentList';
 
-
-
 function App() {
-  useEffect(() => {
-
-    console.log('called');
-  }, [])
   return (
     <div className="container mt-4">
       <div className="row">
