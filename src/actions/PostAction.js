@@ -9,8 +9,5 @@ export const getComments = async (postId) => {
 };
 
 export const savePost = async (title) => {
-  let param ={
-    title
-  }
-  return await axios.post(`https://jsonplaceholder.typicode.com/posts/${param}`);
+  return await axios.post(`https://jsonplaceholder.typicode.com/posts/`);
 };

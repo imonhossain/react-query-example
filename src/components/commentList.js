@@ -11,6 +11,7 @@ function CommentList() {
   const [isError, setIsError] = useState(false);
   const [comments, setComments] = useState([]);
   useEffect(() => {
+    console.log('use date');
     const loadComments = async () => {
       setIsLoading(true);
       try {
@@ -34,13 +35,12 @@ function CommentList() {
           <option value="1">qui est esse</option>
           <option value="2">nesciunt quas odio</option>
           <option value="3">magnam facilis autem</option>
-          <option value="3">dolorem dolore est ipsam</option>
+          <option value="4">dolorem dolore est ipsam</option>
         </select>
       </div>
       {isLoading && <Loading />}
       {isError && <Error />}
-      {!isLoading && !isError && comments.map((item) => <Comment body={item.body} />)}
-      
+      {!isLoading && !isError && comments.map((item) => <Comment body={item.body} id={item.id} />)}
     </div>
   );
 }

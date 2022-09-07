@@ -1,16 +1,23 @@
+import { useEffect } from 'react';
 import './App.css';
-import BlogList from './components/blogList';
+import PostForm from './components/blogForm';
 import CommentList from './components/commentList';
 
+
+
 function App() {
+  useEffect(() => {
+
+    console.log('called');
+  }, [])
   return (
     <div className="container mt-4">
       <div className="row">
         <div className="col-md-6">
-          <BlogList />
+          <CommentList />
         </div>
         <div className="col-md-6">
-          <CommentList />
+          <PostForm />
         </div>
       </div>
     </div>
