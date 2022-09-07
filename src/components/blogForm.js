@@ -1,9 +1,20 @@
 import { useState } from "react";
+import { savePost } from "../actions/PostAction";
 
 function PostForm() {
   const [title, setTitle] = useState('');
-  const onClickSave = () => {
-
+  const [isLoading, setIsLoading] = useState(false)
+  const onClickSave = async () => {
+    setIsLoading(true);
+    try {
+      const { data } = await savePost(title);
+      if (data) {
+        setTitle('');
+        setIsLoading(false);
+      }
+    } catch (err) {
+      setIsLoading(false);
+    }
   }
   return (
     <div className="card">
@@ -12,7 +23,7 @@ function PostForm() {
         <div className="form-group">
           <input className="form-control" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
         </div>
-        <button type="button" className="btn btn-primary" onClick={onClickSave}>Save</button>
+        <button type="button" className="btn btn-primary" onClick={() => onClickSave()} disabled={isLoading}>{isLoading ? 'saving...' : 'Save' }</button>
       </div>
     </div>
   );
